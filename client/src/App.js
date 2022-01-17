@@ -17,6 +17,7 @@ function App() {
   }
 
   const fetchGreeting = async () => {
+    await requestAccount()
     if(typeof window.ethereum !== 'undefined') {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const signer = provider.getSigner()
@@ -43,6 +44,7 @@ function App() {
   }
 
   const getBalance = async() => {
+    await requestAccount()
     if(typeof window.ethereum !== 'undefined') {
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
       const provider = new ethers.providers.Web3Provider(window.ethereum)
