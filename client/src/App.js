@@ -12,7 +12,7 @@ function App() {
     try {
       await window.ethereum.request({ method: 'eth_requestAccounts' })
     } catch(error) {
-      alert('Please install metamask and login first')
+      alert('Please install metamask')
     }
   }
 
